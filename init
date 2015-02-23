@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+prog=$1
+shift 1
+$prog $@
+
