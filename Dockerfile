@@ -1,14 +1,11 @@
-FROM debian:jessie
+FROM tmaczukin/debian
 MAINTAINER Tomasz Maczukin "tomasz@maczukin.pl"
 
-ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update # update_20150223180551
-RUN apt-get install -y --no-install-recommends git-core curl ca-certificates && apt-get clean
-
-ENV TZ Europe/Warsaw
-ENV LANG pl_PL.UTF-8
-
-RUN apt-get install -y --no-install-recommends zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev build-essential && apt-get clean
+RUN apt-get install -y git-core build-essential \
+                        zlib1g-dev libssl-dev libreadline-dev libyaml-dev \
+                        libxml2-dev libxslt-dev libffi-dev && \
+                        apt-get clean
 
 ADD init /init
 RUN chmod +x /init
