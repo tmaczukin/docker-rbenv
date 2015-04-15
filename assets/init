@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -d $HOME/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+
+  prog=$1
+  shift 1
+  $prog $@
+else
+  echo "No rbenv available for current user"
+fi

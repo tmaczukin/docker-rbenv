@@ -1,5 +1,5 @@
 tstamp = $(shell date +"%Y%m%d%H%M%S")
-tag = 0.2
+tag = 0.3
 name = rbenv
 vendor = tmaczukin
 imageName = $(vendor)/$(name)
